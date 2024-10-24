@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/home.dart';
+import 'routes/appRouteConfig.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Akash Practice',
-      home: HomeWidget(),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: MyAppRouter().router,
     );
   }
 }

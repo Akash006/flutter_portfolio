@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_portfolio/widgets/appBar.dart';
 
 class HomeWidget extends StatelessWidget {
   HomeWidget({super.key});
 
   Map fruit_person = {
-    'fruit': ["Organe", "Mango", "PineApple", "Apple", "Kiwi", "Organe", "Mango", "PineApple", "Apple", "Kiwi", "Organe", "Mango", "PineApple", "Apple", "Kiwi"],
-    'person': ["Akash", "Sagar", "Mohit", "Mayank", "Divyank", "Akash", "Sagar", "Mohit", "Mayank", "Divyank", "Akash", "Sagar", "Mohit", "Mayank", "Divyank"]
+    'widget': ["Animated", "Mango" ],
+    'widgetRouteName': ["animatedWidget", "Sagar" ],
   };
 
   @override
@@ -15,15 +16,16 @@ class HomeWidget extends StatelessWidget {
       appBar: AppbarWidget(titleText: "Sample Widgets"),
       body: Container(
         child: ListView.builder(
-          itemCount: fruit_person["fruit"].length,
+          itemCount: fruit_person["widget"].length,
             itemBuilder: (ctx, index) {
               return Card(
                 child: ListTile(
-                  title: Text(fruit_person["fruit"][index]),
-                  subtitle: Text(fruit_person["person"][index]),
+                  title: Text(fruit_person["widget"][index]),
+                  subtitle: Text(fruit_person["widgetRouteName"][index]),
                   leading: Icon(Icons.add_business_sharp),
                   onTap: (){
-                    print(fruit_person["fruit"][index]);
+                    print(fruit_person["widget"][index]);
+                    context.push('/animatedWidget');
                   },
                 ),
               );
