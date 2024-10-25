@@ -17,6 +17,7 @@ class HomeWidget extends StatelessWidget {
       body: Container(
         child: ListView.builder(
             itemCount: routeData["widget"].length,
+            padding: EdgeInsets.all(8),
             itemBuilder: (ctx, index) {
               return Card(
                 child: ListTile(
@@ -24,6 +25,7 @@ class HomeWidget extends StatelessWidget {
                     routeData["widget"][index],
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
+                  trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     context.push('/${routeData["widgetRouteName"][index]}');
                   },
