@@ -9,9 +9,12 @@ import 'package:flutter_portfolio/widgets/imagePicker.dart';
 import 'package:flutter_portfolio/widgets/tabBar.dart';
 import 'package:flutter_portfolio/widgets/snackBar.dart';
 import 'package:flutter_portfolio/widgets/dropdown.dart';
+import 'errorPage.dart';
 
 class MyAppRouter {
   GoRouter router = GoRouter(
+    // Only work if initialRoute is not defined
+    errorBuilder: (context, state) => const Error404Screen(),
     routes: [
       GoRoute(
         name: MyAppRouteConstants.homeWidgetRouteName,
@@ -52,7 +55,7 @@ class MyAppRouter {
         name: MyAppRouteConstants.dropDownWidgetRouteName,
         path: '/dropDownWidget',
         builder: (context, state) => const DropdownMenuExample(),
-      ),
+      )
     ],
   );
 }
