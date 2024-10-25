@@ -6,8 +6,8 @@ class HomeWidget extends StatelessWidget {
   HomeWidget({super.key});
 
   Map routeData = {
-    'widget': ["Text Animated", "Buttons" ],
-    'widgetRouteName': ["animatedWidget", "buttonsWidget" ],
+    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar" ],
+    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget" ]
   };
 
   @override
@@ -16,21 +16,20 @@ class HomeWidget extends StatelessWidget {
       appBar: AppbarWidget(titleText: "Sample Widgets"),
       body: Container(
         child: ListView.builder(
-          itemCount: routeData["widget"].length,
+            itemCount: routeData["widget"].length,
             itemBuilder: (ctx, index) {
               return Card(
                 child: ListTile(
-                  title: Text(routeData["widget"][index],
-                    style: Theme.of(context).textTheme.displayMedium,
+                  title: Text(
+                    routeData["widget"][index],
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  onTap: (){
-                    print('/${routeData["widgetRouteName"][index]}');
+                  onTap: () {
                     context.push('/${routeData["widgetRouteName"][index]}');
                   },
                 ),
               );
-            }
-        ),
+            }),
       ),
     );
   }

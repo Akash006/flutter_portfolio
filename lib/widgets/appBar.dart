@@ -9,7 +9,6 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       title: Text(titleText,
         style: TextStyle(
-          fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
       ),
