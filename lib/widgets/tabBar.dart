@@ -10,29 +10,33 @@ class TabBarWidget extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
           title: Text('Tab Bar Widget'),
-          bottom:
-              const TabBar(indicatorWeight: 10, indicatorColor: Colors.black, tabs: [
-            Tab(
-              icon: Icon(
-                Icons.chat,
-              ),
-              text: 'CHATS',
-            ),
-            Tab(
-              icon: Icon(
-                Icons.chat_bubble,
-              ),
-              text: 'STATUS',
-            ),
-            Tab(
-              icon: Icon(
-                Icons.call,
-              ),
-              text: 'CALLS',
-            ),
-          ]),
+          backgroundColor: Colors.blue,
+          bottom: const TabBar(
+              labelColor: Colors.black54, // Color of selected tab text
+              unselectedLabelColor: Colors.black54, // Color of unselected tab text
+              indicatorColor: Colors.black54, // Color of the line under the selected tab
+              indicatorWeight: 5.0, // Thickness of the indicator line
+              tabs: [
+                Tab(
+                  icon: Icon(
+                    Icons.chat,
+                  ),
+                  text: 'CHATS',
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.chat_bubble,
+                  ),
+                  text: 'STATUS',
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.call,
+                  ),
+                  text: 'CALLS',
+                ),
+              ]),
         ),
         body: TabBarView(children: [
           Container(
