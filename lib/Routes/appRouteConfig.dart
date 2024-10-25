@@ -7,6 +7,8 @@ import 'package:flutter_portfolio/widgets/buttons.dart';
 import 'package:flutter_portfolio/widgets/dismissable.dart';
 import 'package:flutter_portfolio/widgets/imagePicker.dart';
 import 'package:flutter_portfolio/widgets/tabBar.dart';
+import 'package:flutter_portfolio/widgets/snackBar.dart';
+import 'package:flutter_portfolio/widgets/dropdown.dart';
 
 class MyAppRouter {
   GoRouter router = GoRouter(
@@ -40,6 +42,16 @@ class MyAppRouter {
         name: MyAppRouteConstants.tabBarWidgetRouteName,
         path: '/tabBarWidget',
         builder: (context, state) => const TabBarWidget(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.snackBarWidgetRouteName,
+        path: '/snackBarWidget',
+        builder: (context, state) => const MySnackBarWidget(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.dropDownWidgetRouteName,
+        path: '/dropDownWidget',
+        builder: (context, state) => const DropdownMenuExample(),
       ),
     ],
   );

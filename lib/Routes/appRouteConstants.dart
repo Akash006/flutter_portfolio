@@ -5,4 +5,6 @@ class MyAppRouteConstants {
   static const String dismissableWidgetRouteName = 'dismissableWidget';
   static const String imagePickerWidgetRouteName = 'imagePickerWidget';
   static const String tabBarWidgetRouteName = 'tabBarWidget';
+  static const String snackBarWidgetRouteName = 'snackBarWidget';
+  static const String dropDownWidgetRouteName = 'dropDownWidget';
 }

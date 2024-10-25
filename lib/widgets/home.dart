@@ -6,8 +6,8 @@ class HomeWidget extends StatelessWidget {
   HomeWidget({super.key});
 
   Map routeData = {
-    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar" ],
-    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget" ]
+    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget"],
+    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget" ]
   };
 
   @override
