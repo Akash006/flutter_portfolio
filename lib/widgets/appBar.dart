@@ -14,8 +14,8 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget{
         ),
       ),
       // centerTitle: false,
-      backgroundColor: Colors.blue,
-      elevation: 8,
+      // backgroundColor: Colors.blue,
+      // elevation: 8,
     );
   }
 
