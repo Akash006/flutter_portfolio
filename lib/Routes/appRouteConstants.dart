@@ -7,4 +7,7 @@ class MyAppRouteConstants {
   static const String tabBarWidgetRouteName = 'tabBarWidget';
   static const String snackBarWidgetRouteName = 'snackBarWidget';
   static const String dropDownWidgetRouteName = 'dropDownWidget';
+  static const String bottomNavBarRouteName = 'bottomNavBar';
+  static const String formWidgetRouteName = 'formWidget';
+  static const String listGridRouteName = 'listGrid';
 }

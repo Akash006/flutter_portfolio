@@ -34,8 +34,12 @@ class MyThemeData {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         backgroundColor: Colors.blue, // Button background color
-        foregroundColor: Colors
-            .white, // Button text color (use foregroundColor instead of primary)
+        foregroundColor: Colors.white, // Button text color (use foregroundColor instead of primary)
+        textStyle: TextStyle(
+          fontSize: 18,
+        ),
+        elevation: 10,
+        shadowColor: Colors.grey
       ),
     ),
 
@@ -95,5 +99,18 @@ class MyThemeData {
             fontSize: 18, fontWeight: FontWeight.bold), // Text style
       ),
     ),
+
+    listTileTheme: const ListTileThemeData(
+      tileColor: Colors.blue,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(18))
+      ),
+      textColor: Colors.white,
+      iconColor: Colors.white,
+      titleTextStyle: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold
+      ),
+    )
   );
 }

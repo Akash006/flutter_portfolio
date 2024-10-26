@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/widgets/home.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_portfolio/routes/appRouteConstants.dart';
@@ -9,6 +8,9 @@ import 'package:flutter_portfolio/widgets/imagePicker.dart';
 import 'package:flutter_portfolio/widgets/tabBar.dart';
 import 'package:flutter_portfolio/widgets/snackBar.dart';
 import 'package:flutter_portfolio/widgets/dropdown.dart';
+import 'package:flutter_portfolio/widgets/bottomNavBar.dart';
+import 'package:flutter_portfolio/widgets/formWidget.dart';
+import 'package:flutter_portfolio/widgets/listGrid.dart';
 import 'errorPage.dart';
 
 class MyAppRouter {
@@ -55,7 +57,22 @@ class MyAppRouter {
         name: MyAppRouteConstants.dropDownWidgetRouteName,
         path: '/dropDownWidget',
         builder: (context, state) => const DropdownMenuExample(),
-      )
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.bottomNavBarRouteName,
+        path: '/bottomNavBar',
+        builder: (context, state) => const BottomNav(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.formWidgetRouteName,
+        path: '/formWidget',
+        builder: (context, state) => const MyFormWidget(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.listGridRouteName,
+        path: '/listGrid',
+        builder: (context, state) => ListGridView(),
+      ),
     ],
   );
 }
