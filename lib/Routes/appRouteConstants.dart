@@ -10,4 +10,5 @@ class MyAppRouteConstants {
   static const String bottomNavBarRouteName = 'bottomNavBar';
   static const String formWidgetRouteName = 'formWidget';
   static const String listGridRouteName = 'listGrid';
+  static const String actionSliderRouteName = 'actionSlider';
 }

@@ -11,6 +11,7 @@ import 'package:flutter_portfolio/widgets/dropdown.dart';
 import 'package:flutter_portfolio/widgets/bottomNavBar.dart';
 import 'package:flutter_portfolio/widgets/formWidget.dart';
 import 'package:flutter_portfolio/widgets/listGrid.dart';
+import 'package:flutter_portfolio/widgets/actionSlider.dart';
 import 'errorPage.dart';
 
 class MyAppRouter {
@@ -72,6 +73,11 @@ class MyAppRouter {
         name: MyAppRouteConstants.listGridRouteName,
         path: '/listGrid',
         builder: (context, state) => ListGridView(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.actionSliderRouteName,
+        path: '/actionSlider',
+        builder: (context, state) => ActionSliderWidget(),
       ),
     ],
   );
