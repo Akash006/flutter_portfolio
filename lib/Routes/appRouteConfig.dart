@@ -12,6 +12,7 @@ import 'package:flutter_portfolio/widgets/bottomNavBar.dart';
 import 'package:flutter_portfolio/widgets/formWidget.dart';
 import 'package:flutter_portfolio/widgets/listGrid.dart';
 import 'package:flutter_portfolio/widgets/actionSlider.dart';
+import 'package:flutter_portfolio/widgets/carouselView.dart';
 import 'errorPage.dart';
 
 class MyAppRouter {
@@ -21,7 +22,7 @@ class MyAppRouter {
     routes: [
       GoRoute(
         name: MyAppRouteConstants.homeWidgetRouteName,
-        path: '/',
+        path: '/a',
         builder: (context, state) => HomeWidget(),
       ),
       GoRoute(
@@ -78,6 +79,12 @@ class MyAppRouter {
         name: MyAppRouteConstants.actionSliderRouteName,
         path: '/actionSlider',
         builder: (context, state) => ActionSliderWidget(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.carouselViewRouteName,
+        // path: '/carouselView',
+        path: '/',
+        builder: (context, state) => carouselView(),
       ),
     ],
   );

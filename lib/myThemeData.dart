@@ -2,115 +2,152 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class MyThemeData {
-  ThemeData myTheme = ThemeData(
+  ThemeData lightMode = ThemeData(
+    brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        elevation: 10,
-        iconTheme: IconThemeData(
-          color: Colors.white, // Color of icons in AppBar
-          size: 26,
-        ),
-        actionsIconTheme: IconThemeData(
-          color: Colors.white, // Color of action icons in AppBar
-          size: 26,
-        ),
-        titleTextStyle: TextStyle(
-          fontSize: 26,
-        )),
-
-    primarySwatch: Colors.blue, // Main color theme
-    visualDensity: VisualDensity
-        .adaptivePlatformDensity, // Adjusts padding for different platforms
-    fontFamily: 'Raleway', // Custom font family
-
-    // Use ColorScheme to handle accent/secondary color instead of deprecated accentColor
-    colorScheme: ColorScheme.fromSwatch(
-      primarySwatch: Colors.blue,
-    ).copyWith(secondary: Colors.purple),
-
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-        backgroundColor: Colors.blue, // Button background color
-        foregroundColor: Colors.white, // Button text color (use foregroundColor instead of primary)
-        textStyle: TextStyle(
-          fontSize: 18,
-        ),
-        elevation: 10,
-        shadowColor: Colors.grey
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
+      backgroundColor: Colors.blue,
+      centerTitle: true,
+      elevation: 10,
+      iconTheme: IconThemeData(
+        color: Colors.white,
+        size: 26,
+      ),
+      actionsIconTheme: IconThemeData(
+        color: Colors.white,
+        size: 26,
+      ),
+      titleTextStyle: TextStyle(
+        fontSize: 26,
       ),
     ),
-
+    primarySwatch: Colors.blue,
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+    fontFamily: 'Raleway',
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: Colors.blue,
+      brightness: Brightness.light, // Match brightness here
+    ).copyWith(
+      secondary: Colors.purple,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        textStyle: const TextStyle(fontSize: 18),
+        elevation: 10,
+        shadowColor: Colors.grey,
+      ),
+    ),
     textTheme: const TextTheme(
-      displayLarge: TextStyle(
-          fontSize: 28,
-          color: Colors.black,
-          fontWeight: FontWeight.w900), // Replaces headline1
-      displayMedium: TextStyle(
-          fontSize: 24,
-          color: Colors.black,
-          fontWeight: FontWeight.w900), // Replaces headline2
-      displaySmall: TextStyle(
-          fontSize: 20,
-          color: Colors.black,
-          fontWeight: FontWeight.w900), // Replaces headline3
-      headlineMedium: TextStyle(
-          fontSize: 18,
-          color: Colors.black,
-          fontWeight: FontWeight.w700), // Replaces headline4
-      headlineSmall: TextStyle(
-          fontSize: 16,
-          color: Colors.black,
-          fontWeight: FontWeight.w700), // Replaces headline5
-      titleLarge:
-          TextStyle(fontSize: 14, color: Colors.black), // Replaces headline6
-      titleMedium:
-          TextStyle(fontSize: 16, color: Colors.black), // Replaces subtitle1
-      titleSmall:
-          TextStyle(fontSize: 16, color: Colors.black), // Replaces subtitle2
-      bodyLarge:
-          TextStyle(fontSize: 16, color: Colors.black), // Replaces bodyText1
-      bodyMedium:
-          TextStyle(fontSize: 14, color: Colors.black), // Replaces bodyText2
+      displayLarge: TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w900),
+      displayMedium: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w900),
+      displaySmall: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w900),
+      headlineMedium: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w700),
+      headlineSmall: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w700),
+      titleLarge: TextStyle(fontSize: 14, color: Colors.black),
+      titleMedium: TextStyle(fontSize: 16, color: Colors.black),
+      titleSmall: TextStyle(fontSize: 16, color: Colors.black),
+      bodyLarge: TextStyle(fontSize: 16, color: Colors.black),
+      bodyMedium: TextStyle(fontSize: 14, color: Colors.black),
     ),
-
-    iconTheme: const IconThemeData(
-      color: Colors.white, // Default icon color
+    iconTheme: const IconThemeData(color: Colors.white),
+    snackBarTheme: const SnackBarThemeData(
+      elevation: 8,
+      backgroundColor: Colors.pink,
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        elevation: 5,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+    ),
+    listTileTheme: const ListTileThemeData(
+      tileColor: Colors.blue,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(18))),
+      textColor: Colors.white,
+      iconColor: Colors.white,
+      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    ),
+  );
 
-    snackBarTheme:
-        const SnackBarThemeData(
-            elevation: 8,
-            backgroundColor: Colors.pink,
-        ),
+  ThemeData darkMode = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: Colors.grey[900],
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle.light,
+      backgroundColor: Colors.blue,
+      centerTitle: true,
+      elevation: 10,
+      iconTheme: IconThemeData(
+        color: Colors.white,
+        size: 26,
+      ),
+      actionsIconTheme: IconThemeData(
+        color: Colors.white,
+        size: 26,
+      ),
+      titleTextStyle: TextStyle(
+        fontSize: 26,
+      ),
+    ),
+    primarySwatch: Colors.indigo,
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+    fontFamily: 'Raleway',
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: Colors.indigo,
+      brightness: Brightness.dark, // Match brightness here
+    ).copyWith(
+      secondary: Colors.purple,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+        textStyle: const TextStyle(fontSize: 18),
+        elevation: 10,
+        shadowColor: Colors.grey,
+      ),
+    ),
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.w900),
+      displayMedium: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w900),
+      displaySmall: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w900),
+      headlineMedium: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w700),
+      headlineSmall: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w700),
+      titleLarge: TextStyle(fontSize: 14, color: Colors.white),
+      titleMedium: TextStyle(fontSize: 16, color: Colors.white),
+      titleSmall: TextStyle(fontSize: 16, color: Colors.white),
+      bodyLarge: TextStyle(fontSize: 16, color: Colors.white),
+      bodyMedium: TextStyle(fontSize: 14, color: Colors.white),
+    ),
+    iconTheme: const IconThemeData(color: Colors.white),
+
+    snackBarTheme: const SnackBarThemeData(
+      elevation: 8,
+      backgroundColor: Colors.white,
+      actionTextColor: Colors.black,
+    ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white, // Button background color
-        elevation: 5, // Elevation of the button
-        padding: const EdgeInsets.symmetric(
-            horizontal: 20, vertical: 12), // Padding inside the button
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12), // Rounded corners
-        ),
-        textStyle: const TextStyle(
-            fontSize: 18, fontWeight: FontWeight.bold), // Text style
+        backgroundColor: Colors.white,
+        elevation: 5,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
-
     listTileTheme: const ListTileThemeData(
-      tileColor: Colors.blue,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(18))
-      ),
+      tileColor: Colors.indigo,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(18))),
       textColor: Colors.white,
       iconColor: Colors.white,
-      titleTextStyle: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold
-      ),
-    )
+      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    ),
   );
 }

@@ -6,6 +6,7 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget{
 
   @override
   Widget build(BuildContext context) {
+    bool isLightTheme = Theme.of(context).brightness == Brightness.light;
     return AppBar(
       title: Text(titleText,
         style: TextStyle(
@@ -15,6 +16,19 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget{
       // centerTitle: false,
       // backgroundColor: Colors.blue,
       // elevation: 8,
+      actions: [
+        IconButton(
+          icon: Icon(
+            isLightTheme ? Icons.wb_sunny : Icons.nightlight_round,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            if (isLightTheme) {
+            } else {
+            }
+          },
+        ),
+      ],
     );
   }
 

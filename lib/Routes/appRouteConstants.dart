@@ -11,4 +11,5 @@ class MyAppRouteConstants {
   static const String formWidgetRouteName = 'formWidget';
   static const String listGridRouteName = 'listGrid';
   static const String actionSliderRouteName = 'actionSlider';
+  static const String carouselViewRouteName = 'carouselView';
 }
