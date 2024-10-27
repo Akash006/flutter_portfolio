@@ -73,6 +73,10 @@ class MyThemeData {
       iconColor: Colors.white,
       titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     ),
+
+    cardTheme: const CardTheme(
+      color: Colors.blue
+    ),
   );
 
   ThemeData darkMode = ThemeData(
@@ -80,7 +84,7 @@ class MyThemeData {
     scaffoldBackgroundColor: Colors.grey[900],
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.indigoAccent,
       centerTitle: true,
       elevation: 10,
       iconTheme: IconThemeData(
@@ -139,15 +143,20 @@ class MyThemeData {
         elevation: 5,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        textStyle: const TextStyle(fontSize: 1, fontWeight: FontWeight.bold),
       ),
     ),
     listTileTheme: const ListTileThemeData(
-      tileColor: Colors.indigo,
+      tileColor: Colors.black12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(18))),
       textColor: Colors.white,
       iconColor: Colors.white,
       titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     ),
+
+    cardTheme: const CardTheme(
+        color: Colors.indigo,
+    ),
+
   );
 }

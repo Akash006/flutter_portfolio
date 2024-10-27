@@ -22,7 +22,7 @@ class MyAppRouter {
     routes: [
       GoRoute(
         name: MyAppRouteConstants.homeWidgetRouteName,
-        path: '/a',
+        path: '/',
         builder: (context, state) => HomeWidget(),
       ),
       GoRoute(
@@ -82,10 +82,9 @@ class MyAppRouter {
       ),
       GoRoute(
         name: MyAppRouteConstants.carouselViewRouteName,
-        // path: '/carouselView',
-        path: '/',
+        path: '/carouselView',
         builder: (context, state) => carouselView(),
-      ),
+      )
     ],
   );
 }

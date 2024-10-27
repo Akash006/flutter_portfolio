@@ -4,30 +4,41 @@ import 'package:flutter_portfolio/widgets/appBar.dart';
 import 'package:flutter_portfolio/widgets/drawer.dart';
 
 class HomeWidget extends StatelessWidget {
-  HomeWidget({super.key});
+  HomeWidget({super.key}) {
+    // Sort routeData
+    final List<MapEntry<String, String>> sortedEntries = List.generate(
+      routeData['widget'].length,
+          (index) => MapEntry(routeData['widget'][index], routeData['widgetRouteName'][index]),
+    )..sort((a, b) => a.key.compareTo(b.key));
 
-  Map routeData = {
-    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider"],
-    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider"]
+    // Reassign sorted values back to routeData
+    routeData['widget'] = sortedEntries.map((entry) => entry.key).toList();
+    routeData['widgetRouteName'] = sortedEntries.map((entry) => entry.value).toList();
+  }
+
+  final Map routeData = {
+    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider", "Carousel View" ],
+    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider", "carouselView" ]
   };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarWidget(titleText: "Sample Widgets"),
+      appBar: AppbarWidget(titleText: "Sample Widgets"),
       drawer: DrawerWidget().myDrawer,
       body: Column(
         children: [
           Expanded(
             child: ListView.builder(
               itemCount: routeData["widget"].length,
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemBuilder: (ctx, index) {
                 return Card(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
                   child: ListTile(
-                    title: Text(
-                      routeData["widget"][index]
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    title: Text(routeData["widget"][index]),
                     trailing: const Icon(Icons.keyboard_arrow_right),
                     onTap: () {
                       context.push('/${routeData["widgetRouteName"][index]}');
@@ -37,11 +48,11 @@ class HomeWidget extends StatelessWidget {
               },
             ),
           ),
-          // Spacer to create maximum space between the list and the bottom card
-          const SizedBox(height: 16),
           Card(
-            margin: const EdgeInsets.all(8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
             child: ListTile(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               tileColor: Colors.red[600],
               title: const Center(
                 child: Text(
