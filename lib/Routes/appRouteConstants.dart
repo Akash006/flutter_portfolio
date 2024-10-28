@@ -12,4 +12,5 @@ class MyAppRouteConstants {
   static const String listGridRouteName = 'listGrid';
   static const String actionSliderRouteName = 'actionSlider';
   static const String carouselViewRouteName = 'carouselView';
+  static const String localNotificationRouteName = 'localNotification';
 }

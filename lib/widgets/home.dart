@@ -17,8 +17,9 @@ class HomeWidget extends StatelessWidget {
   }
 
   final Map routeData = {
-    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider", "Carousel View" ],
-    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider", "carouselView" ]
+    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider", "Carousel View", "Local Notification"],
+
+    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider", "carouselView", "localNotification"]
   };
 
   @override
@@ -27,50 +28,49 @@ class HomeWidget extends StatelessWidget {
       appBar: AppbarWidget(titleText: "Sample Widgets"),
       drawer: DrawerWidget().myDrawer,
       body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: routeData["widget"].length,
-              padding: const EdgeInsets.all(8),
-              itemBuilder: (ctx, index) {
-                return Card(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                  margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
-                  child: ListTile(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                    title: Text(routeData["widget"][index]),
-                    trailing: const Icon(Icons.keyboard_arrow_right),
-                    onTap: () {
-                      context.push('/${routeData["widgetRouteName"][index]}');
-                    },
-                  ),
-                );
-              },
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: routeData["widget"].length,
+                padding: const EdgeInsets.all(8),
+                itemBuilder: (ctx, index) {
+                  return Container(
+                    padding: EdgeInsets.fromLTRB(6, 2, 6, 2),
+                    margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+                    child: ListTile(
+                      title: Text(routeData["widget"][index]),
+                      trailing: const Icon(Icons.keyboard_arrow_right),
+                      onTap: () {
+                        context.push('/${routeData["widgetRouteName"][index]}');
+                      },
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-          Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
-            child: ListTile(
+            Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              tileColor: Colors.red[600],
-              title: const Center(
-                child: Text(
-                  "Error Page Route",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+              child: ListTile(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                tileColor: Colors.red[600],
+                title: const Center(
+                  child: Text(
+                    "Error Page Route",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
+                onTap: (){
+                  context.push('/error');
+                },
               ),
-              onTap: (){
-                context.push('/error');
-              },
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
     );
   }
 }

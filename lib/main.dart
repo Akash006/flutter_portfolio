@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'models/notificationLocal.dart';
 import 'models/themeProvider.dart';
 import 'routes/appRouteConfig.dart';
 import 'package:provider/provider.dart';
 import 'myThemeData.dart';
 
 void main() {
-  // runApp(const MyApp());
-  runApp(new MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  LocalNotifications.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {

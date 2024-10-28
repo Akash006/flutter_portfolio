@@ -13,6 +13,7 @@ import 'package:flutter_portfolio/widgets/formWidget.dart';
 import 'package:flutter_portfolio/widgets/listGrid.dart';
 import 'package:flutter_portfolio/widgets/actionSlider.dart';
 import 'package:flutter_portfolio/widgets/carouselView.dart';
+import '../widgets/localNotification.dart';
 import 'errorPage.dart';
 
 class MyAppRouter {
@@ -84,6 +85,11 @@ class MyAppRouter {
         name: MyAppRouteConstants.carouselViewRouteName,
         path: '/carouselView',
         builder: (context, state) => carouselView(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.localNotificationRouteName,
+        path: '/localNotification',
+        builder: (context, state) => localNotificationWidget(),
       )
     ],
   );

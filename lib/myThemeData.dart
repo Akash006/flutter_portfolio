@@ -5,9 +5,9 @@ class MyThemeData {
   ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.dark,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue.shade800,
       centerTitle: true,
       elevation: 10,
       iconTheme: IconThemeData(
@@ -19,9 +19,10 @@ class MyThemeData {
         size: 26,
       ),
       titleTextStyle: TextStyle(
-        fontSize: 26,
+        fontSize: 24,
       ),
     ),
+
     primarySwatch: Colors.blue,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     fontFamily: 'Raleway',
@@ -31,6 +32,7 @@ class MyThemeData {
     ).copyWith(
       secondary: Colors.purple,
     ),
+
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         backgroundColor: Colors.blue,
@@ -52,11 +54,13 @@ class MyThemeData {
       bodyLarge: TextStyle(fontSize: 16, color: Colors.black),
       bodyMedium: TextStyle(fontSize: 14, color: Colors.black),
     ),
-    iconTheme: const IconThemeData(color: Colors.white),
+
+    iconTheme: const IconThemeData(color: Colors.blue),
     snackBarTheme: const SnackBarThemeData(
       elevation: 8,
       backgroundColor: Colors.pink,
     ),
+
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white,
@@ -66,25 +70,37 @@ class MyThemeData {
         textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
-    listTileTheme: const ListTileThemeData(
-      tileColor: Colors.blue,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(18))),
-      textColor: Colors.white,
-      iconColor: Colors.white,
-      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-    ),
 
     cardTheme: const CardTheme(
       color: Colors.blue
+    ),
+
+    listTileTheme: const ListTileThemeData(
+      tileColor: Colors.blue,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+      textColor: Colors.white,
+      iconColor: Colors.white,
+      titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    ),
+
+    drawerTheme: DrawerThemeData(
+      elevation: 8,
+    ),
+
+    dividerTheme: DividerThemeData(
+      color: Colors.grey,
+      thickness: 1,
+      space: 2
     ),
   );
 
   ThemeData darkMode = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.grey[900],
-    appBarTheme: const AppBarTheme(
+
+    appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
-      backgroundColor: Colors.indigoAccent,
+      backgroundColor: Colors.indigo.shade800,
       centerTitle: true,
       elevation: 10,
       iconTheme: IconThemeData(
@@ -96,7 +112,7 @@ class MyThemeData {
         size: 26,
       ),
       titleTextStyle: TextStyle(
-        fontSize: 26,
+        fontSize: 24,
       ),
     ),
     primarySwatch: Colors.indigo,
@@ -108,6 +124,7 @@ class MyThemeData {
     ).copyWith(
       secondary: Colors.purple,
     ),
+
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         backgroundColor: Colors.indigo,
@@ -117,6 +134,17 @@ class MyThemeData {
         shadowColor: Colors.grey,
       ),
     ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        elevation: 5,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        textStyle: const TextStyle(fontSize: 18),
+      ),
+    ),
+
     textTheme: const TextTheme(
       displayLarge: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.w900),
       displayMedium: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w900),
@@ -129,7 +157,8 @@ class MyThemeData {
       bodyLarge: TextStyle(fontSize: 16, color: Colors.white),
       bodyMedium: TextStyle(fontSize: 14, color: Colors.white),
     ),
-    iconTheme: const IconThemeData(color: Colors.white),
+
+    iconTheme: const IconThemeData(color: Colors.indigoAccent),
 
     snackBarTheme: const SnackBarThemeData(
       elevation: 8,
@@ -137,25 +166,21 @@ class MyThemeData {
       actionTextColor: Colors.black,
     ),
 
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        elevation: 5,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        textStyle: const TextStyle(fontSize: 1, fontWeight: FontWeight.bold),
-      ),
-    ),
     listTileTheme: const ListTileThemeData(
-      tileColor: Colors.black12,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(18))),
+      tileColor: Colors.indigo,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
       textColor: Colors.white,
       iconColor: Colors.white,
-      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     ),
 
     cardTheme: const CardTheme(
         color: Colors.indigo,
+    ),
+
+    drawerTheme: DrawerThemeData(
+      elevation: 8,
+      backgroundColor: Colors.grey[900],
     ),
 
   );

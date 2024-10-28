@@ -9,8 +9,8 @@ class DrawerWidget {
             child: ListView(
               children: [
                 DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue[400],
+                  decoration: const BoxDecoration(
+                    // color: Colors.blue[400],
                     borderRadius: BorderRadius.only(
                       // bottomLeft: Radius.circular(15),
                       bottomRight: Radius.circular(35)
@@ -37,14 +37,10 @@ class DrawerWidget {
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 26,
-                                      color: Colors.white
                                     ),
                                   ),
                                   Text("akashsaini0797@gmail.com",
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      color: Colors.white70
-                                    ),
                                   ),
                                 ],
                               ),
@@ -54,17 +50,36 @@ class DrawerWidget {
                       ),
                     ),
                 ),
-                const ListTile(
-                  leading: Icon(Icons.folder),
-                  title: Text("My Files"),
-                  textColor: Colors.blue,
-                  iconColor: Colors.blue,
+                Container(
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
+                      Icon(Icons.folder,
+                      size: 28,),
+                      SizedBox(width: 10,),
+                      Text("My Files",
+                        style: TextStyle(
+                            fontSize: 20
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                const ListTile(
-                  leading: Icon(Icons.group),
-                  title: Text('Shared with me'),
-                  textColor: Colors.blue,
-                  iconColor: Colors.blue,
+                SizedBox(height: 20,),
+                Container(
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
+                      Icon(Icons.settings,
+                        size: 28,),
+                      SizedBox(width: 10,),
+                      Text("Settings",
+                        style: TextStyle(
+                            fontSize: 20
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -74,9 +89,9 @@ class DrawerWidget {
             child: Column(
               children: [
                 Divider(
-                  color: Colors.grey[200],
+                  // color: Colors.grey[200],
                 ),
-                const Text("Made with ❤️ by Akash",
+                const Text("Made with ❤️",
                     style: TextStyle(color: Colors.grey)),
                 const Text(
                   "Version: 1.2.0",
