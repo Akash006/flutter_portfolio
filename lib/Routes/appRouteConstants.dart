@@ -13,4 +13,5 @@ class MyAppRouteConstants {
   static const String actionSliderRouteName = 'actionSlider';
   static const String carouselViewRouteName = 'carouselView';
   static const String localNotificationRouteName = 'localNotification';
+  static const String colorisedTextAvatarRouteName = 'colorizedtextavatar';
 }

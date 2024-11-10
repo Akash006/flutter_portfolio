@@ -13,6 +13,7 @@ import 'package:flutter_portfolio/widgets/formWidget.dart';
 import 'package:flutter_portfolio/widgets/listGrid.dart';
 import 'package:flutter_portfolio/widgets/actionSlider.dart';
 import 'package:flutter_portfolio/widgets/carouselView.dart';
+import 'package:flutter_portfolio/widgets/colorizedTextAvatar.dart';
 import '../widgets/localNotification.dart';
 import 'errorPage.dart';
 
@@ -79,17 +80,22 @@ class MyAppRouter {
       GoRoute(
         name: MyAppRouteConstants.actionSliderRouteName,
         path: '/actionSlider',
-        builder: (context, state) => ActionSliderWidget(),
+        builder: (context, state) => const ActionSliderWidget(),
       ),
       GoRoute(
         name: MyAppRouteConstants.carouselViewRouteName,
         path: '/carouselView',
-        builder: (context, state) => carouselView(),
+        builder: (context, state) => const carouselView(),
       ),
       GoRoute(
         name: MyAppRouteConstants.localNotificationRouteName,
         path: '/localNotification',
-        builder: (context, state) => localNotificationWidget(),
+        builder: (context, state) => const localNotificationWidget(),
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.colorisedTextAvatarRouteName,
+        path: '/colorizedtextavatar',
+        builder: (context, state) => const Colorizedtextavatar(),
       )
     ],
   );

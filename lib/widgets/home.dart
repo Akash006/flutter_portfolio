@@ -1,3 +1,4 @@
+import 'package:colorize_text_avatar/colorize_text_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_portfolio/widgets/appBar.dart';
@@ -17,9 +18,9 @@ class HomeWidget extends StatelessWidget {
   }
 
   final Map routeData = {
-    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider", "Carousel View", "Local Notification"],
+    'widget': ["Text Animated", "Buttons", "Dismissable Widget", "Image Picker", "Tab Bar", "Snack Bar", "DropDown Widget", "Bottom Nav Bar", "Forms", "List Grid", "Action Slider", "Carousel View", "Local Notification", "Text Avatar"],
 
-    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider", "carouselView", "localNotification"]
+    'widgetRouteName': ["animatedWidget", "buttonsWidget", "dismissableWidget", "imagePickerWidget", "tabBarWidget", "snackBarWidget", "dropDownWidget", "bottomNavBar", "formWidget", "listGrid", "actionSlider", "carouselView", "localNotification", "colorizedtextavatar"]
   };
 
   @override
@@ -32,13 +33,22 @@ class HomeWidget extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemCount: routeData["widget"].length,
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
                 itemBuilder: (ctx, index) {
-                  return Container(
-                    padding: EdgeInsets.fromLTRB(6, 2, 6, 2),
-                    margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+                  return Card(
+                    elevation: 12,
+                    // padding: EdgeInsets.fromLTRB(6, 6, 6, 2),
+                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
                     child: ListTile(
+                      // contentPadding: EdgeInsets.all(14),
+                      subtitle: Text("This is sample subtitle"),
                       title: Text(routeData["widget"][index]),
+                      leading: TextAvatar(
+                        textColor: Colors.white,
+                        shape: Shape.Circular,
+                        text: routeData["widget"][index],
+                        numberLetters: 1,
+                      ),
                       trailing: const Icon(Icons.keyboard_arrow_right),
                       onTap: () {
                         context.push('/${routeData["widgetRouteName"][index]}');

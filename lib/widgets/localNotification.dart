@@ -24,6 +24,19 @@ class localNotificationWidget extends StatelessWidget {
                 },
                 label: Text("Simple Notification"),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton.icon(
+                icon: Icon(Icons.timer_outlined),
+                onPressed: () {
+                  LocalNotifications.showPeriodicNotifications(
+                      title: "Periodic Notification",
+                      body: "This is a Periodic Notification",
+                      payload: "This is periodic data");
+                },
+                label: Text("Periodic Notifications"),
+              ),
             ],
           ),
         ),
